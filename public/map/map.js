@@ -23,7 +23,7 @@ function onMapClick(e) {
 }
 
 map.on('click', onMapClick);
-makeGuess = function () {
+function makeGuess() {
 
     if (lat == -1 || lng == -1) {
 
@@ -34,7 +34,7 @@ makeGuess = function () {
         const email = localStorage.getItem("email");
         if (fullname == null || email == null) {
             alert("You are not logged in!");
-            window.location.href = window.location.origin + '/index.html';
+            window.location.replace("../index.html");
             return;
         }
 
@@ -47,6 +47,6 @@ makeGuess = function () {
         });
         localStorage.clear();
         alert("Your guess has been submitted!");
-        window.location.href = "index.html";
+        window.location.replace("../index.html");
     }
 }
